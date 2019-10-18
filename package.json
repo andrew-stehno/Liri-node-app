@@ -1,5 +1,5 @@
 {
-  "name": "LIRE-node-app",
+  "name": "Liri-node-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/andrew-stehno/Lire-node-app/issues"
   },
-  "homepage": "https://github.com/andrew-stehno/Lire-node-app#readme"
+  "homepage": "https://github.com/andrew-stehno/Lire-node-app#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.2.0",
+    "moment": "^2.24.0",
+    "node-spotify-api": "^1.1.1"
+  }
 }
