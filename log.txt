@@ -1,35 +1,26 @@
-Movie: Zombieland
-Year: 2009
-Rated: R
-Rotten Tomatoes: 90%
+Movie: Star Wars: Episode IV - A New Hope
+Year: 1977
+Rated: PG
+Rotten Tomatoes: 93%
 Country: USA
 Language: English
-Plot: A shy student trying to reach his family in Ohio, a gun-toting tough guy trying to find the last Twinkie, and a pair of sisters trying to get to an amusement park join forces to travel across a zombie-filled America.
-Actors: Jesse Eisenberg, Woody Harrelson, Emma Stone, Abigail Breslin
+Plot: Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.
+Actors: Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing
+
+Artist: Backstreet Boys
+Track: I Want It That Way
+Spotify: https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7
+Album: The Hits--Chapter One
 
 Artist: The Beatles
-Track: Come Together - Remastered 2009
+Track: Yesterday - Remastered 2009
 Spotify: https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2
-Album: Abbey Road (Remastered)
+Album: Help! (Remastered)
 
 Artist: The Beatles
-Track: Come Together - Remastered 2009
+Track: Yesterday - Remastered 2009
 Spotify: https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2
-Album: Abbey Road (Remastered)
-
-Movie: True Lies
-Year: 1994
-Rated: R
-Rotten Tomatoes: 70%
-Country: USA
-Language: English, French, Arabic, German
-Plot: A fearless, globe-trotting, terrorist-battling secret agent has his life turned upside down when he discovers his wife might be having an affair with a used car salesman while terrorists smuggle nuclear war heads into the United States.
-Actors: Arnold Schwarzenegger, Jamie Lee Curtis, Tom Arnold, Bill Paxton
-
-Artist: The Beatles
-Track: Let It Be - Remastered 2009
-Spotify: https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2
-Album: Let It Be (Remastered)
+Album: Help! (Remastered)
 
 Movie: Mr. Nobody
 Year: 2009
@@ -45,46 +36,21 @@ Track: I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of
 Spotify: https://open.spotify.com/artist/0ngegjiIfjQ5XZ14hny28a
 Album: Karaoke Box: Reggae Greatest Hits
 
-Artist: Backstreet Boys
-Track: I Want It That Way
-Spotify: https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7
-Album: The Hits--Chapter One
-
-Artist: Backstreet Boys
-Track: I Want It That Way
-Spotify: https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7
-Album: The Hits--Chapter One
-
-Movie: Alien
-Year: 1979
-Rated: R
-Rotten Tomatoes: 97%
-Country: UK, USA
-Language: English
-Plot: After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious lifeform, and they soon realize that its life cycle has merely begun.
-Actors: Tom Skerritt, Sigourney Weaver, Veronica Cartwright, Harry Dean Stanton
-
-Artist: The Chainsmokers
-Track: Something Just Like This
-Spotify: https://open.spotify.com/artist/69GGBxA162lTqCwzJG5jLp
-Album: Memories...Do Not Open
-
-Movie: The Jerk
-Year: 1979
-Rated: R
-Rotten Tomatoes: 81%
+Movie: Star Wars: Episode V - The Empire Strikes Back
+Year: 1980
+Rated: PG
+Rotten Tomatoes: 95%
 Country: USA
 Language: English
-Plot: A simple minded, sheltered country boy suddenly decides to leave his family home to experience life in the big city, where his naivety is both his best friend, and worst enemy.
-Actors: Steve Martin, Bernadette Peters, Catlin Adams, Mabel King
+Plot: After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader.
+Actors: Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams
+
+Venue: The Royal
+Location: Salt Lake City, UT
+Date: 10/25/2019
 
 Artist: The Beatles
-Track: Octopus's Garden - Remastered 2009
+Track: Ob-La-Di, Ob-La-Da - Remastered 2009
 Spotify: https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2
-Album: Abbey Road (Remastered)
-
-Artist: The Beatles
-Track: Octopus's Garden - Remastered 2009
-Spotify: https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2
-Album: Abbey Road (Remastered)
+Album: The Beatles (Remastered)
 

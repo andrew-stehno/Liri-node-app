@@ -68,7 +68,7 @@ inquirer
 // Do what it says ============================
 function doWhatItSays() {
     if (!doWhat === true) {
-        console.log("You're missing out on the greatest songe ever!");
+        console.log("You're missing out on the greatest song ever!");
         console.log("\n");
     } else {
         randomTxt();
@@ -260,7 +260,7 @@ function randomTxt() {
     })
     };
 
-// Append files to log.txt=====================
+// Append files to log.txt =====================
 function append() {
     fs.appendFile("log.txt", song || band || film, function (err) {
         if (err) {
