@@ -45,3 +45,46 @@ Track: I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of
 Spotify: https://open.spotify.com/artist/0ngegjiIfjQ5XZ14hny28a
 Album: Karaoke Box: Reggae Greatest Hits
 
+Artist: Backstreet Boys
+Track: I Want It That Way
+Spotify: https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7
+Album: The Hits--Chapter One
+
+Artist: Backstreet Boys
+Track: I Want It That Way
+Spotify: https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7
+Album: The Hits--Chapter One
+
+Movie: Alien
+Year: 1979
+Rated: R
+Rotten Tomatoes: 97%
+Country: UK, USA
+Language: English
+Plot: After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious lifeform, and they soon realize that its life cycle has merely begun.
+Actors: Tom Skerritt, Sigourney Weaver, Veronica Cartwright, Harry Dean Stanton
+
+Artist: The Chainsmokers
+Track: Something Just Like This
+Spotify: https://open.spotify.com/artist/69GGBxA162lTqCwzJG5jLp
+Album: Memories...Do Not Open
+
+Movie: The Jerk
+Year: 1979
+Rated: R
+Rotten Tomatoes: 81%
+Country: USA
+Language: English
+Plot: A simple minded, sheltered country boy suddenly decides to leave his family home to experience life in the big city, where his naivety is both his best friend, and worst enemy.
+Actors: Steve Martin, Bernadette Peters, Catlin Adams, Mabel King
+
+Artist: The Beatles
+Track: Octopus's Garden - Remastered 2009
+Spotify: https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2
+Album: Abbey Road (Remastered)
+
+Artist: The Beatles
+Track: Octopus's Garden - Remastered 2009
+Spotify: https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2
+Album: Abbey Road (Remastered)
+

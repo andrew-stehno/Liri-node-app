@@ -13,6 +13,7 @@ let spotify = new Spotify(keys.spotify);
 let track;
 let artist;
 let movie;
+let doWhat;
 let song;
 let band;
 let film;
@@ -36,6 +37,13 @@ inquirer
             type: "input",
             message: "What movie would you like to search for?",
             name: "movie"
+        },
+
+        {
+            type: "confirm",
+            name: "do-what-it-says",
+            message: 'Would you like to run "do-what-it-says"?',
+            default: true
         }
 
     ])
@@ -47,12 +55,26 @@ inquirer
         track = response.track;
         artist = response.artist;
         movie = response.movie;
-
+        doWhat = response["do-what-it-says"];
+        
         // Invoke functions:
+        doWhatItSays();
         tunes();
         venues();
         movies();
+       
     });
+
+// Do what it says ============================
+function doWhatItSays() {
+    if (!doWhat === true) {
+        console.log("You're missing out on the greatest songe ever!");
+        console.log("\n");
+    } else {
+        randomTxt();
+    }
+
+};
 
 // Spotify API================================
 function tunes() {
@@ -188,6 +210,56 @@ function movies() {
         })
 };
 
+// Read file===========================
+function randomTxt() {
+    fs.readFile("random.txt", "utf8", function(error, random) {
+        // IF any errors, log to terminal:
+        if (error) {
+            return console.log(error);
+        }
+    
+        // console.log(random);
+        let randomArr = random.split(",");
+        // console.log(randomArr);
+        let read = randomArr[1];
+
+        spotify
+        .search({
+            type: 'track', query: read, limit: 1
+        })
+
+        .then(function (response) {
+            // console.log(JSON.stringify(response.tracks, null, 2));
+
+            // Store responses in variables:
+            let performer = response.tracks.items[0].album.artists[0].name;
+            let track1 = response.tracks.items[0].name;
+            let spotifyPreview = response.tracks.items[0].album.artists[0].external_urls.spotify;
+            let album = response.tracks.items[0].album.name;
+
+            // Console log to terminal:
+            console.log("=============================")
+            console.log("Spotify API");
+            console.log("Artist: " + performer);
+            console.log("Track: " + track1);
+            console.log("Spotify preview: " + spotifyPreview);
+            console.log("Album: " + album);
+            console.log("=============================")
+            console.log("\n");
+
+            // Concatenate responses to append to log.txt:
+            song = "Artist: " + performer + "\r\n" + "Track: " + track1 + "\r\n" + "Spotify: " + spotifyPreview + "\r\n" + "Album: " + album + "\r\n" + "\r\n";
+
+            append();
+        })
+
+        // IF any errors, log to terminal:
+        .catch(function (err) {
+            console.log(err);
+        })
+    })
+    };
+
 // Append files to log.txt=====================
 function append() {
     fs.appendFile("log.txt", song || band || film, function (err) {
@@ -202,3 +274,4 @@ function append() {
         }
     })
 };
+
