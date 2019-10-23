@@ -28,6 +28,6 @@ Results as displayed in the terminal:
 
 A video narrative is provided at the link below:
 
-[google link](https://drive.google.com/file/d/1rI2yh2UyRl12WQhUsshprc2KLmShRIT-/view?usp=sharing)
+[Me! I'm a link.](https://drive.google.com/file/d/1rI2yh2UyRl12WQhUsshprc2KLmShRIT-/view?usp=sharing)
 
 Having been given simple directions on the project, my role in development was to build the project from the ground up.  From downloading the appropriate NPM's, to Javascript programming, to QA.  Thanks for viewing.
