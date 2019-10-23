@@ -1,16 +1,23 @@
+// NPM require:
 require("dotenv").config();
-var keys = require("./keys.js");
-var axios = require("axios");
-var Spotify = require("node-spotify-api");
-var inquirer = require("inquirer");
+let keys = require("./keys.js");
+let axios = require("axios");
+let Spotify = require("node-spotify-api");
+let inquirer = require("inquirer");
+let moment = require("moment");
+let fs = require("fs");
 
-var spotify = new Spotify(keys.spotify);
+let spotify = new Spotify(keys.spotify);
 
-var track;
-var artist;
-var movie;
+// Globals:
+let track;
+let artist;
+let movie;
+let song;
+let band;
+let film;
 
-
+// User input:
 inquirer
     .prompt([
         {
@@ -30,95 +37,168 @@ inquirer
             message: "What movie would you like to search for?",
             name: "movie"
         }
+
     ])
-    .then(function(response) {
-       console.log(response);
+    .then(function (response) {
+        console.log(response);
+        console.log("\n")
+
+        // Prompts stored in variables:
         track = response.track;
         artist = response.artist;
         movie = response.movie;
 
-       tunes();
-    //    venues();
-    //    movies();
-
-    
-    
-})
+        // Invoke functions:
+        tunes();
+        venues();
+        movies();
+    });
 
 // Spotify API================================
 function tunes() {
 
-    trackTitle = "";
+    // Data validation:
+    if (!track) {
+        track = "The Sign by Ace of Base";
+    }
 
-// Loop through all words in input:
-    // for (let i = 0; i < track.length; i++) {
-    //     if (i > 2 && i < track.length){
-    //     trackTitle = trackTitle + "+" + track[i];
-    // } else {
-    //     trackTitle += track[i];
-    // }
-    // };
+    spotify
+        .search({
+            type: 'track', query: track, limit: 1
+        })
 
-spotify
-    .search({
-        type: 'track', query: track, limit: 1
-    })
-    .then(function(response) {
-        console.log("Artist: " + response.tracks.items[0].album.artists[0].name);
-        console.log("Track: " + response.tracks.items[0].name);
-        console.log("Spotify preview: " + response.tracks.items[0].album.artists[0].external_urls.spotify);
-        console.log("Album: " + response.tracks.items[0].album.name);
-    })
-    .catch(function(err) {
-        console.log(err);
-    });
-}
+        .then(function (response) {
+            // console.log(JSON.stringify(response.tracks, null, 2));
 
+            // Store responses in variables:
+            let performer = response.tracks.items[0].album.artists[0].name;
+            let track1 = response.tracks.items[0].name;
+            let spotifyPreview = response.tracks.items[0].album.artists[0].external_urls.spotify;
+            let album = response.tracks.items[0].album.name;
+
+            // Console log to terminal:
+            console.log("=============================")
+            console.log("Spotify API");
+            console.log("Artist: " + performer);
+            console.log("Track: " + track1);
+            console.log("Spotify preview: " + spotifyPreview);
+            console.log("Album: " + album);
+            console.log("=============================")
+            console.log("\n");
+
+            // Concatenate responses to append to log.txt:
+            song = "Artist: " + performer + "\r\n" + "Track: " + track1 + "\r\n" + "Spotify: " + spotifyPreview + "\r\n" + "Album: " + album + "\r\n" + "\r\n";
+
+            append();
+        })
+
+        // IF any errors, log to terminal:
+        .catch(function (err) {
+            console.log(err);
+        })
+};
 
 // BandsInTown API============================
+function venues() {
 
-// Loop through all words in argument:
-// for (let i = 2; i < trackTitle.length; i++) {
-//     if (i > 2 && i < trackTitle.length){
-//     artist = artist + "+" + trackTitle[i];
-// } else {
-//     artist += trackTitle[i];
-// }
-// };
+    let queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
-// let queryURL = "https://rest.bandsintown.com/artists/ + artist + /events?app_id=codingbootcamp";
-// console.log(queryURL);
+    axios.get(queryURL).then(
+        function (response) {
+            // console.log(JSON.stringify(response.data, null, 2));
 
-// axios.get(queryURL).then(
-//     function(response) {
-//         console.log(response);
-//     })
-//     .catch(function(error) {
-//         if (error.response) {
-//             console.log(error);
-//         }
-//     })
+            // Store responses in variables:
+            let date = response.data[0].datetime;
+            let place = response.data[0].venue.name;
+            let location = response.data[0].venue.city + ", " + response.data[0].venue.region;
+            let time = moment(date).format('MM/DD/YYYY');
+
+            // Console log to terminal:
+            console.log("=============================")
+            console.log("Bands in Town API");
+            console.log("Name of venue: " + place);
+            console.log("Location: " + location);
+            console.log(time);
+            console.log("=============================")
+            console.log("\n");
+
+            // Concatenate responses to append to log.txt:
+            band = "Venue: " + place + "\r\n" + "Location: " + location + "\r\n" + "Date: " + time + "\r\n" + "\r\n";
+
+            append();
+        })
+
+        // IF any errors, log to terminal:
+        .catch(function (error) {
+            if (error.response) {
+                console.log(error);
+            }
+        })
+};
 
 // OMDB API===============================
+function movies() {
 
-    // // Loop through all words in argument:
-    // for (let i = 2; i < trackTitle.length; i++) {
-    //     if (i > 2 && i < trackTitle.length){
-    //     artistmovieName = movieName + "+" + trackTitle[i];
-    // } else {
-    //     movieName += trackTitle[i];
-    // }
-    // };
+    // Data validation:
+    if (!movie) {
+        movie = "Mr. Nobody";
+    }
+    let queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
 
-    // let queryURL = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
-    // console.log(queryURL);
+    axios.get(queryURL).then(
+        function (response) {
+            // console.log(JSON.stringify(response.data, null, 2));
 
-    // axios.get(queryURL).then(
-    //     function(response) {
-    //         console.log(response);
-    //     })
-    //     .catch(function(error) {
-    //         if (error.response) {
-    //             console.log(error);
-    //         }
-    //     })
+            // Store responses in variables:
+            let pictureShow = response.data.Title;
+            let year = response.data.Year;
+            let rated = response.data.Rated;
+            let rottenTomatoes = response.data.Ratings[1].Value;
+            let country = response.data.Country;
+            let language = response.data.Language;
+            let plot = response.data.Plot;
+            let actors = response.data.Actors;
+
+            // Console log to terminal:
+            console.log("=============================")
+            console.log("OMDB API");
+            console.log("Movie title: " + pictureShow);
+            console.log("Year: " + year);
+            console.log("Rated: " + rated);
+            console.log("Rotten Tomatoes: " + rottenTomatoes);
+            console.log("Country: " + country);
+            console.log("Language: " + language);
+            console.log("Plot: " + plot);
+            console.log("Actors: " + actors);
+            console.log("=============================")
+            console.log("\n");
+
+            // Concatenate responses to append to log.txt:
+            film = "Movie: " + pictureShow + "\r\n" + "Year: " + year + "\r\n" + "Rated: " + rated + "\r\n" +
+                "Rotten Tomatoes: " + rottenTomatoes + "\r\n" + "Country: " + country + "\r\n" + "Language: " + language +
+                "\r\n" + "Plot: " + plot + "\r\n" + "Actors: " + actors + "\r\n" + "\r\n";
+
+            append();
+        })
+        // IF any errors, log to terminal:
+        .catch(function (error) {
+            if (error.response) {
+                console.log(error);
+            }
+        })
+};
+
+// Append files to log.txt=====================
+function append() {
+    fs.appendFile("log.txt", song || band || film, function (err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log("=============================");
+            console.log("Content added to log!");
+            console.log("=============================");
+            console.log("\n");
+        }
+    })
+};
