@@ -4,11 +4,11 @@ This is a simple Command Line Interface, in Node.js, allowing us to take in user
 
 To accomplish this, we are using the following NPM's:
 
-*Axios
-*Dotenv
-*Inquirer
-*Moment
-*Node-Spotify-API
+* Axios
+* Dotenv
+* Inquirer
+* Moment
+* Node-Spotify-API
 
 Our API keys are stored locally in an .env file.  Gitignore allows us keep them private, while they maintain accessiblity through keys.js.  All search queries will append to the log.txt file.
 
